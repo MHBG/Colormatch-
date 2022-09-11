@@ -1,6 +1,50 @@
-name: Colormatch
+name: ColorMatch
+version: 1.3.0
+api: 3.28.0
+main: ColorMatch\ColorMatch
 author: MHBG
-main: colorMatch/ MHBG
-version: 1.1.0
-api: 3.0.0
-depend: ["FormAPI"]
+description: The game in where you find and get to the right color in a certain time limit, last one standing wins.
+
+commands:
+    cm:
+        description: "The main ColorMatch command"
+
+permissions:
+    cm:
+        description: "Main ColorMatch permission"
+        default: op
+        children:
+            cm.command:
+                description: "Main command permission"
+                default: op
+                children:
+                    cm.command.help:
+                        description: "ColorMatch help"
+                        default: true
+                    cm.command.join:
+                        description: "Join an arena"
+                        default: true
+                    cm.command.leave:
+                        description: "Leave your current arena "
+                        default: true
+                    cm.command.start:
+                        description: "Force start a game"
+                        default: op
+                    cm.command.stop:
+                        description: "Force stop a game"
+                        default: op
+                    cm.command.kick:
+                        description: "Kick player from the arena"
+                        default: op
+                    cm.command.lobby:
+                        description: "Send player to lobby"
+                        default: true
+                    cm.command.set:
+                        description: "Allow player to edit arenas from the game"
+                        default: op
+            cm.sign:
+                description: "Join using signs"
+                default: true
+            cm.access:
+                description: "Let the player actually play the matches."
+                default: true
